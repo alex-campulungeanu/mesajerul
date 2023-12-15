@@ -1,0 +1,29 @@
+version: '3.8'
+
+x-proxy:
+  &proxy
+  http_proxy: "${HTTP_PROXY}"
+  https_proxy: "${HTTPS_PROXY}"
+
+services:
+  frontend:
+    container_name: kumparaturi_next
+    working_dir: /app
+    image: node:18-alpine
+    restart: on-failure
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - 3010:3000
+    environment:
+      # CHOKIDAR_USEPOLLING: "true"
+      # WATCHPACK_POLLING: "true"
+      # TS_NODE_TRANSPILE_ONLY: "true"
+      # TS_NODE_FILES: "true" 
+      # WDS_SOCKET_PORT: 0
+      << : *proxy
+    env_file:
+      - .env
+    command: tail -f /dev/null
