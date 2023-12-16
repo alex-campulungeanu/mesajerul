@@ -31,5 +31,4 @@ npm run dev
 
 
 ## TODO:
-- [ ] todo 1
-- [x] todo 2
+- [ ] use sqllite DB insted of writing to file
