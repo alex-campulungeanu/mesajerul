@@ -44,6 +44,17 @@ export default function Home() {
      });
   }
 
+  const handlePurgeMessage = async () => {
+    const response = await fetch('/api/message', {
+      method: "DELETE",
+      headers: {
+        'Content-Type': "application/json"
+      }
+    })
+    const data = await response.json()
+    console.log(data)
+  }
+
   return (
     <div>
       <div className="flex flex-col justify-center items-center mt-4">
@@ -57,7 +68,7 @@ export default function Home() {
           <div className="flex flex-row justify-between">
             <button
               onClick={() => saveMessage()}
-              className="bg-red-500 hover:bg-red-700 text-white font-semibold hover:text-white my-4 py-2 px-4 rounded-lg"
+              className="bg-yellow-500 hover:bg-yellow-700 text-white font-semibold hover:text-white my-4 py-2 px-4 rounded-lg"
             >
               Send message
             </button>
@@ -69,6 +80,9 @@ export default function Home() {
             </button>
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-semibold hover:text-white my-4 py-2 px-4 rounded-lg ml-4" onClick={handleCopyMessage}>
               Copy
+            </button>
+            <button className="bg-red-500 hover:bg-red-700 text-white font-semibold hover:text-white my-4 py-2 px-4 rounded-lg ml-4" onClick={handlePurgeMessage}>
+              Remove message
             </button>
           </div>
       </div>

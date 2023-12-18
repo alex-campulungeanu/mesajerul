@@ -23,5 +23,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       console.error(error)
       res.status(500).json({data: error})
     }
+  } else if (req.method === "DELETE") {
+    console.log(dataFilePath)
+    try {
+      const body = ''
+      await fsPromises.writeFile(dataFilePath, body)
+      
+    } catch (error) {
+      console.error(error)
+      res.status(500).json({data: error})
+    }
   }
+
 }
