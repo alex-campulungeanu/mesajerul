@@ -45,32 +45,36 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center mt-4">
-      <textarea 
-        id="message" 
-        rows={20}
-        onChange={handleChangeMessage}
-        className="block p-2.5 w-11/12 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" 
-        placeholder="Write your thoughts here..."
-      />
-        <div className="flex flex-row justify-between">
-          <button
-            onClick={() => saveMessage()}
-            className="bg-red-500 hover:bg-red-700 text-white font-semibold hover:text-white my-4 py-2 px-4 rounded-lg"
-          >
-            Send message
-          </button>
-          <button
-            onClick={() => fetchMessage()}
-            className="bg-green-500 hover:bg-green-700 text-white font-semibold hover:text-white my-4 py-2 px-4 rounded-lg ml-4"
-          >
-            Get message
-          </button>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-semibold hover:text-white my-4 py-2 px-4 rounded-lg ml-4" onClick={handleCopyMessage}>
-            Copy
-          </button>
-        </div>
-        <div>{message}</div>
+    <div>
+      <div className="flex flex-col justify-center items-center mt-4">
+        <textarea
+          id="message"
+          rows={20}
+          onChange={handleChangeMessage}
+          className="block p-2.5 w-11/12 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+          placeholder="Write your thoughts here..."
+        />
+          <div className="flex flex-row justify-between">
+            <button
+              onClick={() => saveMessage()}
+              className="bg-red-500 hover:bg-red-700 text-white font-semibold hover:text-white my-4 py-2 px-4 rounded-lg"
+            >
+              Send message
+            </button>
+            <button
+              onClick={() => fetchMessage()}
+              className="bg-green-500 hover:bg-green-700 text-white font-semibold hover:text-white my-4 py-2 px-4 rounded-lg ml-4"
+            >
+              Get message
+            </button>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-semibold hover:text-white my-4 py-2 px-4 rounded-lg ml-4" onClick={handleCopyMessage}>
+              Copy
+            </button>
+          </div>
+      </div>
+      <div className="ml-4">
+        <pre>{message}</pre>
+      </div>
     </div>
   )
 }

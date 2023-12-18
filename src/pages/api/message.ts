@@ -10,8 +10,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const message = await fsPromises.readFile(dataFilePath)
     const messageString = message.toString()
     console.log(messageString)
-    return res.status(200).json({data: messageString})
-
+    const payload = {data: messageString}
+    return res.status(200).json(payload)
   } else if (req.method === "POST") {
     console.log(dataFilePath)
     try {
