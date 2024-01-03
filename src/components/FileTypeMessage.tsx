@@ -1,11 +1,11 @@
 import React, { ChangeEvent, useState } from 'react'
 
 interface TextTypeMessageProps {
-  handleChangeMessage: (event: ChangeEvent<HTMLTextAreaElement>) => void
+  handleChangeMessage: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
 function FileTypeMessage({handleChangeMessage}: TextTypeMessageProps) {
-  const [file, setFile] = useState(null)
+  const [file, setFile] = useState<File>()
   return (
     <>
       <div>

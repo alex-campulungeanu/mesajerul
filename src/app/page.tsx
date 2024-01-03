@@ -69,6 +69,7 @@ export default function Home() {
     if (messageType === 'text') {
       setMessage(event.target.value)
     } else {
+      //@ts-ignore
       setMessage(event.target.files[0])
     }
   }

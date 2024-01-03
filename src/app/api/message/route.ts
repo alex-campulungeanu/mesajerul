@@ -80,11 +80,11 @@ export async function DELETE(req: NextRequest) {
   }
 }
 
-export const config = {
-  api: {
-    bodyParser: {
-      sizeLimit: '10mb',
-    },
-    responseLimit: false,
-  },
-}
+// export const config = {
+//   api: {
+//     bodyParser: {
+//       sizeLimit: '10mb',
+//     },
+//     responseLimit: false,
+//   },
+// }
