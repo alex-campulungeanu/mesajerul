@@ -32,3 +32,7 @@ npm run dev
 
 ## TODO:
 - [ ] use sqllite DB insted of writing to file
+- [ ] implement upload a file
+- [ ] use a mechanism for security ?
+- [ ] pretty toggle between file and text
+- [ ] refactor the entire route handler so i don't check the request type inside the handler
